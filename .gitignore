@@ -1,0 +1,9 @@
+/**/.idea
+/**/.history
+/**/.ipynb_checkpoints
+/**/training_checkpoints
+/**/logs
+/**/data
+/**/experimentResults
+/**/__pycache__
+*.pyc 

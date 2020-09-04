@@ -1,0 +1,69 @@
+{
+  "pretextModelConfigs": [
+    {
+      "modelName": "RCAER128",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "modelClassName": "RCAE",
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "CAE",
+      "inputName": "image",
+      "numClasses": 4,
+      "widthMultiplier": 1,
+      "encoderLastFeatureDim": 128,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,200,400,600,800,1000,1200,1400,1600,1800,2000],
+      "batchSizes": {"patch_camelyon": 2048},
+      "loadCheckpointEpochMultipliers": {"patch_camelyon": 12},
+      "doDatasetValidation": 0
+    }
+  ],
+   "targetModelConfigs": [
+     {
+      "modelName":  "NonLinearClassifier2FC",
+      "modelClassName": "NonLinearClassifierFC",
+      "layers": [256],
+      "verbose": 0,
+      "trainingSteps": -1,
+      "trainingEpochs": 500,
+      "evalSteps": -1,
+      "evalEpochs": 20,
+      "saveCheckpointSteps": 0,
+      "saveCheckpointEpochs": 100,
+      "logSteps": -1,
+      "logEpochs": 5,
+      "saveSummarySteps": -1,
+      "saveSummaryEpochs": 1,
+      "doDatasetValidation": 0,
+      "learningRate": 0.001,
+      "learningRateDecayGamma": 0
+    },{
+      "modelName":  "NonLinearClassifier3FC",
+      "modelClassName": "NonLinearClassifierFC",
+      "layers": [512,256],
+      "verbose": 0,
+      "trainingSteps": -1,
+      "trainingEpochs": 500,
+      "evalSteps": -1,
+      "evalEpochs": 20,
+      "saveCheckpointSteps": 0,
+      "saveCheckpointEpochs": 100,
+      "logSteps": -1,
+      "logEpochs": 5,
+      "saveSummarySteps": -1,
+      "saveSummaryEpochs": 1,
+      "doDatasetValidation": 0,
+      "learningRate": 0.001,
+      "learningRateDecayGamma": 0
+    }],
+
+  "datasetConfigs": [
+  {
+      "nameOfDataset": "patch_camelyon",
+      "dataShape": [64,64,3],
+      "cache": 1,
+      "numClasses": 2
+  }
+]
+}

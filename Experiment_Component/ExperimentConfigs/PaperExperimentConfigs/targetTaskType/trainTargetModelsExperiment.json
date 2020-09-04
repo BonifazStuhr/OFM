@@ -1,0 +1,153 @@
+{
+  "pretextModelConfigs": [
+    {
+      "modelName": "CCAE",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "modelClassName": "CAE",
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "CAE",
+      "inputName": "image",
+      "widthMultiplier": 1,
+      "encoderLastFeatureDim": 256,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,10,30,50,100,150,200,250,300,350,400],
+      "batchSizes": {"shapes3d": 2048},
+      "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+      "doDatasetValidation": 0
+    },
+    {
+      "modelName": "DCAE",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "modelClassName": "CAE",
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "CAE",
+      "inputName": "image",
+      "widthMultiplier": 1,
+      "encoderLastFeatureDim": 256,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,10,30,50,100,150,200,250,300,350,400],
+      "batchSizes": {"shapes3d": 2048},
+      "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+      "doDatasetValidation": 0
+    },
+    {
+      "modelName": "CAE",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "modelClassName": "CAE",
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "CAE",
+      "inputName": "image",
+      "widthMultiplier": 1,
+      "encoderLastFeatureDim": 256,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,10,30,50,100,150,200,250,300,350,400],
+      "batchSizes": {"shapes3d": 2048},
+      "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+      "doDatasetValidation": 0
+    },
+    {
+      "modelName": "RCAE",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "modelClassName": "RCAE",
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "CAE",
+      "inputName": "image",    
+      "outputName": "rotation_label",
+      "numClasses": 4,
+      "widthMultiplier": 1,
+      "encoderLastFeatureDim": 256,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,10,30,50,100,150,200,250,300,350,400],
+      "batchSizes": {"shapes3d": 2048},
+      "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+      "doDatasetValidation": 0
+    },
+    {
+      "modelName": "SCLCAE",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "modelClassName": "SimClr",
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "CAE",
+      "widthMultiplier": 1,
+      "encoderLastFeatureDim": 256,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,10,30,50,100,150,200,250,300,350,400,450,500,550,600],
+      "batchSizes": {"shapes3d": 2048},
+      "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+      "doDatasetValidation": 0
+    }
+  ],
+  "targetModelConfigs": [{
+      "modelName":  "LinearClassifierFC",
+      "modelClassName": "LinearClassifierFC",
+      "verbose": 0,
+      "trainingSteps": -1,
+      "trainingEpochs": 100,
+      "evalSteps": -1,
+      "evalEpochs": 10,
+      "saveCheckpointSteps": 0,
+      "saveCheckpointEpochs": 100,
+      "logSteps": -1,
+      "logEpochs": 5,
+      "saveSummarySteps": -1,
+      "saveSummaryEpochs": 1,
+      "doDatasetValidation": 0,
+      "learningRate": 0.001,
+      "learningRateDecayGamma": 0
+    }
+  ],
+  "datasetConfigs": [
+  {
+    "nameOfDataset": "shapes3d",
+    "dataShape": [64,64,3],
+    "cache": 1,
+    "numClasses": 10,
+    "labelName": "label_floor_hue"
+  },
+  {
+    "nameOfDataset": "shapes3d",
+    "dataShape": [64,64,3],
+    "cache": 1,
+    "numClasses": 10,
+    "labelName": "label_object_hue"
+  },
+  {
+    "nameOfDataset": "shapes3d",
+    "dataShape": [64,64,3],
+    "cache": 1,
+    "numClasses": 15,
+    "labelName": "label_orientation"
+  },
+  {
+    "nameOfDataset": "shapes3d",
+    "dataShape": [64,64,3],
+    "cache": 1,
+    "numClasses": 8,
+    "labelName": "label_scale"
+  },
+  {
+    "nameOfDataset": "shapes3d",
+    "dataShape": [64,64,3],
+    "cache": 1,
+    "numClasses": 4,
+    "labelName": "label_shape"
+  },
+  {
+    "nameOfDataset": "shapes3d",
+    "dataShape": [64,64,3],
+    "cache": 1,
+    "numClasses": 10,
+    "labelName": "label_wall_hue"
+  }
+]
+}

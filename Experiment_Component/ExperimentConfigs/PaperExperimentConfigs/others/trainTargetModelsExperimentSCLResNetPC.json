@@ -1,0 +1,47 @@
+{
+  "pretextModelConfigs": [
+        {
+      "modelName": "SCLResNet",
+      "modelClassName": "SimClr",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "resNet",
+      "resNet": {"resNetDepth": 18},
+      "widthMultiplier": 1,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,400,800,1200,1600,2000,2400,2800,3200,3600,4000,4400,5000],
+      "batchSizes": {"patch_camelyon": 1024},
+      "loadCheckpointEpochMultipliers": {"patch_camelyon": 25},
+      "doDatasetValidation": 0
+    }
+  ],
+   "targetModelConfigs": [{
+      "modelName":  "LinearClassifierFC",
+      "modelClassName": "LinearClassifierFC",
+      "verbose": 0,
+      "trainingSteps": -1,
+      "trainingEpochs": 500,
+      "evalSteps": -1,
+      "evalEpochs": 20,
+      "saveCheckpointSteps": 0,
+      "saveCheckpointEpochs": 100,
+      "logSteps": -1,
+      "logEpochs": 5,
+      "saveSummarySteps": -1,
+      "saveSummaryEpochs": 1,
+      "doDatasetValidation": 0,
+      "learningRate": 0.001,
+      "learningRateDecayGamma": 0
+    }],
+
+  "datasetConfigs": [
+        {
+      "nameOfDataset": "patch_camelyon",
+      "dataShape": [64,64,3],
+      "cache": 1,
+      "numClasses": 2
+  }
+  ]
+}

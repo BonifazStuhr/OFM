@@ -1,0 +1,68 @@
+{
+  "pretextModelConfigs": [
+     {
+      "modelName": "CAER256",
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+      "modelClassName": "CAE",
+      "augmentationsName": "targetTaskAugmentations",
+      "backbone": "CAE",
+      "inputName": "image",
+      "widthMultiplier": 1,
+      "encoderLastFeatureDim": 256,
+      "learningRate": 0.001,
+      "loadCheckpoints": [0,5,20,50,100,150,200,250,300,350,400],
+      "batchSizes": {"cifar10": 2048},
+      "loadCheckpointEpochMultipliers": {"cifar10": 19},
+      "doDatasetValidation": 0
+    }
+  ],
+   "targetModelConfigs": [
+     {
+      "modelName":  "NonLinearClassifier2FC",
+      "modelClassName": "NonLinearClassifierFC",
+      "layers": [256],
+      "verbose": 0,
+      "trainingSteps": -1,
+      "trainingEpochs": 500,
+      "evalSteps": -1,
+      "evalEpochs": 20,
+      "saveCheckpointSteps": 0,
+      "saveCheckpointEpochs": 100,
+      "logSteps": -1,
+      "logEpochs": 5,
+      "saveSummarySteps": -1,
+      "saveSummaryEpochs": 1,
+      "doDatasetValidation": 0,
+      "learningRate": 0.001,
+      "learningRateDecayGamma": 0
+    },{
+      "modelName":  "NonLinearClassifier3FC",
+      "modelClassName": "NonLinearClassifierFC",
+      "layers": [512,256],
+      "verbose": 0,
+      "trainingSteps": -1,
+      "trainingEpochs": 500,
+      "evalSteps": -1,
+      "evalEpochs": 20,
+      "saveCheckpointSteps": 0,
+      "saveCheckpointEpochs": 100,
+      "logSteps": -1,
+      "logEpochs": 5,
+      "saveSummarySteps": -1,
+      "saveSummaryEpochs": 1,
+      "doDatasetValidation": 0,
+      "learningRate": 0.001,
+      "learningRateDecayGamma": 0
+    }],
+
+  "datasetConfigs": [
+  {
+      "nameOfDataset": "cifar10",
+      "dataShape": [32,32,3],
+      "cache": 1,
+      "numClasses": 10
+  }
+]
+}

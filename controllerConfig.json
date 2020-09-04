@@ -1,0 +1,7 @@
+{
+  "executeExperiments": 1,
+  "hardware":{
+    "numGPUs": 4,
+    "numCPUCores": 28
+  }
+}

@@ -1,0 +1,128 @@
+{
+    "pretextModelConfigs": [
+      {
+        "modelName": "SCLCAER4",
+        "verbose": 0,
+        "xFoldType": 5,
+        "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+        "modelClassName": "SimClr",
+        "augmentationsName": "targetTaskAugmentations",
+        "backbone": "CAE",
+        "widthMultiplier": 1,
+        "encoderLastFeatureDim": 4,
+        "learningRate": 0.001,
+        "loadCheckpoints": [0,10,50,100,150,200,300,400,500,600],
+        "batchSizes": {"shapes3d": 2048},
+        "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+        "doDatasetValidation": 0
+      },
+      {
+        "modelName": "SCLCAER32",
+        "verbose": 0,
+        "xFoldType": 5,
+        "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+        "modelClassName": "SimClr",
+        "augmentationsName": "targetTaskAugmentations",
+        "backbone": "CAE",
+        "widthMultiplier": 1,
+        "encoderLastFeatureDim": 32,
+        "learningRate": 0.001,
+        "loadCheckpoints": [0,10,50,100,150,200,300,400,500,600],
+        "batchSizes": {"shapes3d": 2048},
+        "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+        "doDatasetValidation": 0
+      },
+       {
+        "modelName": "SCLCAER128",
+        "verbose": 0,
+        "xFoldType": 5,
+        "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+        "modelClassName": "SimClr",
+        "augmentationsName": "targetTaskAugmentations",
+        "backbone": "CAE",
+        "widthMultiplier": 1,
+        "encoderLastFeatureDim": 128,
+        "learningRate": 0.001,
+        "loadCheckpoints": [0,10,50,100,150,200,300,400,500,600],
+        "batchSizes": {"shapes3d": 2048},
+        "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+        "doDatasetValidation": 0
+      },
+         {
+        "modelName": "SCLCAER256",
+        "verbose": 0,
+        "xFoldType": 5,
+        "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+        "modelClassName": "SimClr",
+        "augmentationsName": "targetTaskAugmentations",
+        "backbone": "CAE",
+        "widthMultiplier": 1,
+        "encoderLastFeatureDim": 256,
+        "learningRate": 0.001,
+        "loadCheckpoints": [0,10,50,100,150,200,300,400,500,600],
+        "batchSizes": {"shapes3d": 2048},
+        "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+        "doDatasetValidation": 0
+      },
+       {
+        "modelName": "SCLCAER512",
+        "verbose": 0,
+        "xFoldType": 5,
+        "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+        "modelClassName": "SimClr",
+        "augmentationsName": "targetTaskAugmentations",
+        "backbone": "CAE",
+        "widthMultiplier": 1,
+        "encoderLastFeatureDim": 512,
+        "learningRate": 0.001,
+        "loadCheckpoints": [0,10,50,100,150,200,300,400,500,600],
+        "batchSizes": {"shapes3d": 2048},
+        "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+        "doDatasetValidation": 0
+      },
+      {
+        "modelName": "SCLCAER1024",
+        "verbose": 0,
+        "xFoldType": 5,
+        "xFoldCrossValidationsToLoad": [0,1,2,3,4],
+        "modelClassName": "SimClr",
+        "augmentationsName": "targetTaskAugmentations",
+        "backbone": "CAE",
+        "widthMultiplier": 1,
+        "encoderLastFeatureDim": 1024,
+        "learningRate": 0.001,
+        "loadCheckpoints": [0,10,50,100,150,200,300,400,500,600],
+        "batchSizes": {"shapes3d": 2048},
+        "loadCheckpointEpochMultipliers": {"shapes3d": 187},
+        "doDatasetValidation": 0
+      }
+    ],
+     "targetModelConfigs": [{
+        "modelName":  "LinearClassifierFC",
+        "modelClassName": "LinearClassifierFC",
+        "verbose": 0,
+        "trainingSteps": -1,
+        "trainingEpochs": 100,
+        "evalSteps": -1,
+        "evalEpochs": 20,
+        "saveCheckpointSteps": 0,
+        "saveCheckpointEpochs": 100,
+        "logSteps": -1,
+        "logEpochs": 5,
+        "saveSummarySteps": -1,
+        "saveSummaryEpochs": 1,
+        "doDatasetValidation": 0,
+        "learningRate": 0.001,
+        "learningRateDecayGamma": 0
+      }],
+
+    "datasetConfigs": [
+      {
+        "nameOfDataset": "shapes3d",
+        "dataShape": [64,64,3],
+        "cache": 1,
+        "numClasses": 10,
+        "labelName": "label_object_hue"
+      }
+  ]
+  }

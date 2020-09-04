@@ -1,0 +1,39 @@
+{
+  "pretextModelConfigs": [
+    {
+      "modelName":  "CCAER256NoFlip",
+      "modelClassName": "CAE",
+      "augmentationsName": "colorCaeAugmentationsNoFlip",
+      "backbone": "CAE",
+      "inputName": "jitter_image",
+      "outputName": "image",
+      "encoderLastFeatureDim": 256,
+      "widthMultiplier": 1,
+      "verbose": 0,
+      "xFoldType": 5,
+      "xFoldCrossValidation": [0,1,2,3,4],
+      "trainingSteps": -1,
+      "trainingEpochs": 800,
+      "evalSteps": -1,
+      "evalEpochs": 10,
+      "saveCheckpointSteps": -1,
+      "saveCheckpointEpochs": 10,
+      "logSteps": -1,
+      "logEpochs": 1,
+      "saveSummarySteps": -1,
+      "saveSummaryEpochs": 1,
+      "learningRate": 0.001,
+      "batchSizes": {"patch_camelyon": 2048},
+      "doDatasetValidation": 0
+    }
+  ],
+
+  "datasetConfigs": [
+     {
+      "nameOfDataset": "patch_camelyon",
+      "dataShape": [64,64,3],
+      "cache": 1,
+      "numClasses": 2
+  }
+]
+}

@@ -1,0 +1,6 @@
+{
+  "mode": "sequential",
+  "experimentsToRun": ["TrainPretextModelsExperiment","TrainTargetModelsExperiment"],
+  "experimentConfigsToRun": {"TrainPretextModelsExperiment": ["trainPretextModelsExperiment.json"],
+                             "TrainTargetModelsExperiment": ["trainTargetModelsExperiment.json"]}
+}
