@@ -1,6 +1,6 @@
 # Original Implementation of the Paper “Don't miss the Mismatch: Investigating the Objective Function Mismatch for Unsupervised Representation Learning"
 This is the original implementation of the paper 
-[“Don't miss the Mismatch: Investigating the Objective Function Mismatch for Unsupervised Representation Learning”](TODO: Paper Link) in TensorFlow 2.2.0.
+[“Don't miss the Mismatch: Investigating the Objective Function Mismatch for Unsupervised Representation Learning”](https://link.springer.com/article/10.1007/s00521-022-07031-9) in TensorFlow 2.2.0.
 
 ## Usage
 ### 1. Configuration
